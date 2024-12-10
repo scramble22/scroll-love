@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html, body, section {
+            block-size: 100%;
+        }
+
+        html {
+            scroll-snap-type: y mandatory;
+        }
+
+        h1 {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            font-size: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        section {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+            position: relative;
+        }
+
+        section img {
+            max-width: 100%;
+            max-height: 70vh; /* Максимальная высота изображения относительно экрана */
+            object-fit: cover; /* Изображение будет адаптироваться по контейнеру */
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        section:nth-of-type(even) {
+            color: white;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        }
+
+        section:nth-of-type(odd) {
+            color: black;
+            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, sans-serif;
+            font-size: 2rem;
+        }
+
+        .small-gif {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        .smile {
+            font-size: 1rem;
+        }
+
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            body {
+                font-size: 1.5rem;
+            }
+
+            .small-gif,
+            .smile {
+                font-size: 1rem;
+                width: 90px;
+            }
+
+            section img {
+                max-height: 50vh; /* Для маленьких экранов уменьшаем высоту изображений */
+            }
+        }
+
+        /* Анимация появления */
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        /* Сердечки */
+        .heart {
+            position: absolute;
+            bottom: 0;
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            clip-path: polygon(50% 0%, 100% 30%, 75% 100%, 25% 100%, 0% 30%);
+            opacity: 0.8;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(0.8);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-100vh) scale(1.2);
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-120vh) scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        /* Разные размеры и направления сердечек */
+        .heart:nth-child(2) {
+            left: 20%;
+            animation-duration: 3s;
+            animation-delay: 0.2s;
+        }
+
+        .heart:nth-child(3) {
+            left: 40%;
+            width: 25px;
+            height: 25px;
+            animation-duration: 2.5s;
+            animation-delay: 0.4s;
+        }
+
+        .heart:nth-child(4) {
+            left: 60%;
+            animation-duration: 3.5s;
+            animation-delay: 0.1s;
+        }
+
+        .heart:nth-child(5) {
+            left: 80%;
+            width: 20px;
+            height: 20px;
+            animation-duration: 2s;
+            animation-delay: 0.3s;
+        }
+
+        .heart:nth-child(6) {
+            left: 10%;
+            animation-duration: 4.5s;
+            animation-delay: 0.5s;
+        }
+    </style>
+
+    <title>ксюшкк - мой котёнок</title>
+</head>
+<body>
+    <section class="section">
+        <h1><3</h1>
+    </section>
+    <section class="section">
+        <h1>Ксюша...</h1>
+    </section>
+    <section class="section">
+        <h1>Знаешь что..?<img class="smile" src="1.png" alt="Smile"></h1>
+    </section>
+    <section class="section">
+        <h1>в общеем</h1>
+        <img class="small-gif" src="1.gif" alt="Small GIF">
+    </section>
+    <section class="section">
+        <h1>во-первых..:</h1>
+    </section>
+    <section class="section">
+        <h1>это ты</h1>
+        <img class="cat-image" alt="Kitten 1">
+    </section>
+    <section class="section">
+        <h1>и эта тоже</h1>
+        <img class="cat-image" alt="Kitten 2">
+    </section>
+    <section class="section">
+        <h1>во-вторыых..</h1>
+    </section>
+    <section class="section">
+        <h1>Я..</h1>
+    </section>
+    <section class="section">
+        <h1>очень..</h1>
+    </section>
+    <section class="section">
+        <h1>люблю тебя!!</h1>
+        <img class="cat-image" alt="Kitten 3">
+    </section>
+    <section class="section">
+        <h1>спасибо тебе за то, что ты есть у меня!</h1>
+    </section>
+    <section class="section">
+        <h1>а ищоо...</h1>
+    </section>
+    <section class="section">
+      <img class="photo" src="1.jpg">
+    </section>
+    <section class="section">
+      <h1>я так постоянно делаю <img class="smile" src="1.gif" alt="smile"></h1>
+    </section>
+    <section class="section">
+      <h1>не забывай...</h1>
+    </section>
+    <section class="section">
+      <h1>что твоё личико...</h1>
+    </section>
+    <section class="section">самое прекрасное в мире:)<img class="smile" src="heart.png" alt="smile"></h1>
+    </section>
+    <section class="section">
+      <h1>ээх...<img class="smile" src="cat-smile.jpg" alt="smile"></h1>
+    </section>
+    <section class="section">
+      <img src="4.jpg" class="photo">
+    </section>
+    <section class="section">
+      <h1>и даа...</h1>
+    </section>
+    <section class="section">
+      <img src="3.jpg" class="photo">
+    </section>
+    <section class="section">
+      <h1>и я изо всех сил буду стараться его содержать в идеальных  условиях:))</h1>
+    </section>
+    <section class="section">
+      <img class="smile" src="1.gif" alt="smile"><img class="smile" src="1.gif" alt="smile"><img class="smile" src="1.gif" alt="smile">
+    </section>
+    <section class="section">
+      <h1>тыж мая самая милая девочка</h1>
+    </section>
+    <section class="section">
+      <h1>я хочу просто постоянно говорить тебе всякие милые и добрые слова...</h1>
+    </section>
+    <section class="section">
+        <h1>блиинаа... ну...</h1>
+    </section>
+    <section class="section">
+        <h1>насколько же...</h1>
+    </section>
+    <section class="section">
+        <h1>твои глазки прекрасны...</h1>
+        <img class="cat-image" alt="Kitten 5">
+    </section>
+    <section class="section">
+        <h1>ну реальноовао</h1>
+    </section>
+    <section class="section">
+        <h1>я просто не могу с них...</h1>
+    </section>
+    <section class="section">
+        <h1>всё воскресенье рассматривал...</h1>
+    </section>
+    <section class="section">
+        <h1>ыаыаыааы, я ваще абнимаца хачу ваще-та...<img class="small-gif" src="1.gif" alt="Small GIF"></h1>
+    </section>
+    <section class="section">
+        <h1>обнять и никогда больше не отпускать...</h1>
+    </section>
+    <section class="section">
+        <h1>и ещё хочу гладить тебя по твоим волосикам...</h1>
+        <img class="cat-image" alt="Kitten">
+    </section>
+    <section class="section">
+        <h1>ну ужас, почему ещё так долго ждать встречи:(</h1>
+    </section>
+    <section class="section">
+        <h1>я уже наших встреч жду, как люди обычно всякие праздники...</h1>
+    </section>
+    <section class="section">
+        <h1>я жду нашей встречи больше чем др.</h1>
+        <img class="cat-image" alt="Kitten 5">
+    </section>
+    <section class="section">
+        <h1>ты у меня самая миленькая!</h1>
+        <p>милашечкка моя:))</p>
+        <img class="cat-image" alt="Kitten 4">
+    </section>
+    <section class="section">
+        <h1>знала бы ты как я тебя люблю...</h1>
+        <p>просто невероятно сильно</p>
+        <img class="cat-image" alt="Kitten 5">
+    </section>
+    <section class="section">
+        <h1>ох, как же я тебя в субботу обниму...</h1>
+        <p><3</p>
+        <img class="cat-image" alt="Kitten 5">
+    </section>
+    <section class="section">
+        <h1>в общем всё:</h1>
+    </section>
+    <section class="section">
+        <h1>скоро заберу тебя</h1>
+    </section>
+    <section class="section">
+        <h1>будем вместе жить и всё у нас будет прекрасно!</h1>
+        <img class="cat-image" alt="Kitten">
+    </section>
+    <section class="section">
+        <h1>лю тя <3</h1>
+        <p>интересненько, как тебе ваще..?:)</p>
+        <img class="cat-image" alt="Kitten 5">
+    </section>
+</section>
+
+    <!-- Слайд с сердечками -->
+    <section class="section" style="background-color: pink; overflow: hidden;">
+        <h1>мяу!</h1>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // анимейшн при скролле нахуй
+            window.addEventListener("scroll", function() {
+                var sections = document.querySelectorAll(".section, h1, img");
+                
+                sections.forEach(function(section) {
+                    var position = section.getBoundingClientRect().top;
+                    var screenPosition = window.innerHeight / 1.3;
+
+                    if (position < screenPosition) {
+                        section.classList.add("fade-in");
+                    }
+                });
+            });
+
+            // Массив с путями к локальным изображениям котов
+            let localCatImages = [
+                "cats/cat1.jpg",
+                "cats/cat2.jpg",
+                "cats/cat3.jpg",
+                "cats/cat4.jpg",
+                "cats/cat5.jpg",
+                "cats/cat6.jpg",
+                "cats/cat7.jpg",
+                "cats/cat8.jpg",
+                "cats/cat9.jpg",
+                "cats/cat10.jpg",
+                "cats/cat11.jpg",
+                "cats/cat12.jpg",
+                "cats/cat13.jpg",
+                "cats/cat14.jpg",
+                "cats/cat15.jpg",
+                "cats/cat16.jpg",
+                "cats/cat17.jpg",
+                "cats/cat18.jpg",
+                "cats/cat19.jpg",
+                "cats/cat20.jpg",
+            ];
+
+            // Функция для получения случайного изображения без повторений
+            function getUniqueCatImage() {
+                if (localCatImages.length === 0) return null; // Если изображения кончились
+                const randomIndex = Math.floor(Math.random() * localCatImages.length);
+                const selectedImage = localCatImages[randomIndex];
+                localCatImages.splice(randomIndex, 1); // Удаляем выбранное изображение из массива
+                return selectedImage;
+            }
+
+            // Находим все изображения котов и присваиваем уникальное изображение
+            const catImages = document.querySelectorAll('.cat-image');
+            catImages.forEach(imgElement => {
+                const imageSrc = getUniqueCatImage();
+                imgElement.src = imageSrc;
+                imgElement.classList.add('fade-in');
+            });
+        });
+    </script>
+</body>
+</html>
